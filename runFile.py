@@ -44,9 +44,6 @@ def info_path():
 
 
 def open_sumo():
-    # print("File directory: " + sumo_path())
-    # os.startfile(sumo_path())
-    # path = 'sumo-gui.exe -c "' + sumocfg_path() + '" --collision.mingap-factor 1 --collision.action warn --collision.stoptime 50"'
     path = 'sumo-gui.exe -c "' + sumocfg_path() + '" --step-length 0.1'
     print(path)
     os.system(path)

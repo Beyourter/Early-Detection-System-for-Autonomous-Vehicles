@@ -1,6 +1,5 @@
 import xml.etree.ElementTree as ET
 import runFile as f
-import updateXML
 
 net_file = f.net_path()
 

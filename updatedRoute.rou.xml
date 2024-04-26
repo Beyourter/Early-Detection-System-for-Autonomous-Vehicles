@@ -1,0 +1,10 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+	<vType vClass="passenger" color="1,0,0" id="type1" minGap="2.5" tau="12.10968" />
+    <vType vClass="passenger" color="0,1,0" id="type2" minGap="2.5" tau="12.10968" />
+    <vType vClass="passenger" color="0,1,1" id="type3" minGap="2.5" tau="12.10968" />
+
+    <route id="r_0" edges="S1 S2 S3 S4 S5" />
+
+    <flow id="f_0" type="type2" begin="0.00" departSpeed="speedLimit" departLane="free" from="S1" to="S5" number="0" vehsPerHour="3000" />
+
+<vehicle id="v_1" type="type1" depart="5" departSpeed="speedLimit"><route edges="S1 S2 S3 S4 S5" /><stop lane="S3_0" endPos="0" until="250" /></vehicle><vehicle id="v_2" type="type3" depart="55" departSpeed="speedLimit" departLane="0" arrivalLane="0"><route edges="S1 S2 S3 S4 S5" /></vehicle></routes>

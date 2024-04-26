@@ -1,31 +1,26 @@
-# importing the module.
 import xml.etree.ElementTree as ET
 import runFile as f
 
+# building up the XML file parsing using etree.ElementTree
 route_file = f.route_path()
 
 tree = ET.parse(route_file)
 root = tree.getroot()
 
 
-def remove_all_vehicle():
+def remove_all_vehicle():  # remove all vehicle spawning
     for vehicle in root.findall('vehicle'):
         root.remove(vehicle)
-        # for route in vehicle.findall('route'):
-        #     edges = route.get('edges')
-        #     print(edges)
 
 
-def gen_vehicle(edge, lane, start_time, end_time, v_id, vtype):
+def gen_vehicle(edge, lane, start_time, end_time, v_id, vtype):  # generate vehicle with input information
     stop_lane = edge + '_' + lane
     veh_edges = ''
     for route in root.findall('route'):
         veh_edges = route.get('edges')
-        # print(veh_edges)
 
     for routes in root.iter('routes'):
         vehicle = ET.SubElement(routes, 'vehicle')
-        # vehicle.text = "Vehicle_1"
         vehicle.set('id', v_id)
         vehicle.set('type', vtype)
         vehicle.set('depart', str(start_time))
@@ -44,14 +39,13 @@ def gen_vehicle(edge, lane, start_time, end_time, v_id, vtype):
             vehicle.set('arrivalLane', str(lane))
 
 
-def mod_flow(density, edge, lane, start_time, end_time, v_id, vtype):
+def mod_flow(density, edge, lane, start_time, end_time, v_id, vtype):  # creating vehicle flow
     if density == 0:
         gen_vehicle(edge, lane, start_time + 50, end_time, v_id, vtype)
 
     if density == 0:
         flow = root.find('flow')
         flow.set('number', '0')
-        # flow.set('vehsPerHour', '2000')
     else:
         flow = root.find('flow')
         flow.set('number', '150') # adjust number of car spawn
@@ -61,7 +55,6 @@ def mod_flow(density, edge, lane, start_time, end_time, v_id, vtype):
 def mod_tau(tau):
     for vType in root.findall('vType'):
         vType.set('tau', str(tau))
-        # vType.set('minGap', str(tau))
 
 
 def modify(edge, lane, start, end, density, tau):

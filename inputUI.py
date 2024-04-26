@@ -17,7 +17,7 @@ start_time = 5
 end_time = 250
 
 
-def sim_sumo():
+def sim_sumo():  # configure simulation files and running SUMO simulation file
     speed = int(speed_combobox.get()) / 3.6
     density = density_combobox.get()
     location = location_combobox.get()
@@ -53,7 +53,7 @@ def sim_sumo():
     runFile.open_sumo()
 
 
-def gen_output():
+def gen_output():  # generate output from the SUMO output files and display on the command line
     getOutput.get_output()
 
 
@@ -61,20 +61,15 @@ def gen_output():
 root = tk.Tk()
 
 # Root window
-# root.geometry("310x380")
 root.title("EDS")
 root.option_add("*tearOff", False)
 root.resizable()
 root.columnconfigure(0, weight=4)
 
 
-# Create a style
+# Create a style and setting up theme
 style = ttk.Style(root)
-
-# Import the tcl file
 root.tk.call("source", "forest-light.tcl")
-
-# Set the theme with the theme_use method
 style.theme_use("forest-light")
 
 # Frame
@@ -89,14 +84,12 @@ report_input_frame.grid(row=0, column=0, sticky=tk.EW, padx=10, pady=5)
 location_label = ttk.Label(report_input_frame, text="Location: ", width=10)
 location_label.grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
 location_combobox = ttk.Combobox(report_input_frame, values=location_list, width=20)
-# location_combobox.insert('', "Location")
 location_combobox.current(2)
 location_combobox.grid(row=0, column=1, padx=10, pady=5, sticky=tk.E)
 
 lane_label = ttk.Label(report_input_frame, text="Lane: ")
 lane_label.grid(row=1, column=0, sticky=tk.W, padx=10, pady=5)
 lane_combobox = ttk.Combobox(report_input_frame, values=lane_list)
-# lane_combobox.insert('', "Lane")
 lane_combobox.current(0)
 lane_combobox.grid(row=1, column=1, padx=10, pady=5, sticky=tk.E)
 
@@ -108,14 +101,12 @@ traffic_input_frame.grid(row=1, column=0, sticky=tk.EW, padx=10, pady=5)
 speed_label = ttk.Label(traffic_input_frame, text="Speed (kph): ", width=10)
 speed_label.grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
 speed_combobox = ttk.Combobox(traffic_input_frame, values=speed_value, width=20)
-# speed_combobox.insert('', "Speed")
 speed_combobox.current(4)
 speed_combobox.grid(row=0, column=1, padx=10, pady=5, sticky=tk.E)
 
 density_label = ttk.Label(traffic_input_frame, text="Density: ")
 density_label.grid(row=1, column=0, padx=10, pady=5, sticky=tk.W)
 density_combobox = ttk.Combobox(traffic_input_frame, values=density_menu_list)
-# density_combobox.insert('', "Density")
 density_combobox.current(0)
 density_combobox.grid(row=1, column=1, padx=10, pady=5, sticky=tk.E)
 
