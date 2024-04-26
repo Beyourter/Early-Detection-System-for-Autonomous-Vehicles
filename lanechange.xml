@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-04-25 00:16:37 by Eclipse SUMO GUI Version 1.19.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\updatedNetwork.net.xml"/>
+        <route-files value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\updatedRoute.rou.xml"/>
+    </input>
+
+    <output>
+        <fcd-output value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\fcd.xml"/>
+        <tripinfo-output value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\tripinfo.xml"/>
+        <lanechange-output value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\lanechange.xml"/>
+        <statistic-output value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\statistic.xml"/>
+    </output>
+
+    <time>
+        <step-length value="0.1"/>
+    </time>
+
+    <gui_only>
+        <gui-settings-file value="C:\Users\Beyourter\OneDrive\Desktop\SeniorProject\Full_simulation_5_simpleMap\file.settings.xml"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<lanechanges>
+    <change id="v_2" type="type3" time="86.80" from="S2_0" to="S2_1" dir="1" speed="15.44" pos="179.62" reason="speedGain" leaderGap="None" leaderSecureGap="None" leaderSpeed="None" followerGap="None" followerSecureGap="None" followerSpeed="None" origLeaderGap="215.48" origLeaderSecureGap="78.69" origLeaderSpeed="0.00"/>
+    <change id="v_2" type="type3" time="110.60" from="S3_1" to="S3_0" dir="-1" speed="18.18" pos="210.30" reason="keepRight" leaderGap="None" leaderSecureGap="None" leaderSpeed="None" followerGap="205.30" followerSecureGap="0.00" followerSpeed="0.00" origLeaderGap="None" origLeaderSecureGap="None" origLeaderSpeed="None"/>
+</lanechanges>
